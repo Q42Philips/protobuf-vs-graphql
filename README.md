@@ -47,3 +47,5 @@ example (default value is 100 if you leave --times out):
 # Results
 
 Yes protobuf is a faster but in my opinion it is neglectable. Since JSON is a lot easier to work with.
+
+![plot](graph.png)
