@@ -8,4 +8,4 @@ If you don't care and just want to see results here you go:
 
 ![GraphQLvsgRPCplot](GraphQLvsgRPC/graph.png)
 
-![JSONvsProtoplot](JSONvsProto/graph.png)
+![JSONvsProtoplot](JSONvsProtocolBuffers/graph.png)
