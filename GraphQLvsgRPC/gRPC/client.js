@@ -19,9 +19,7 @@ var itterations = 1000;
 
 for (var i = 0; i < itterations; i++) {
 
-
     var starttime = process.hrtime()
-
 
     var client = new speed_test.RequestResponse('localhost:50051', grpc.credentials.createInsecure());
     client.doCycle({ name: "test" }, function (err, response) {

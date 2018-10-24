@@ -45,7 +45,7 @@ to now plot this data type:
 execute the python script:
 ```python3 plot.py```
 
-**You can --times [amount] for more samples**
+**You can add --times [amount] for more samples**
 
 # Results
 

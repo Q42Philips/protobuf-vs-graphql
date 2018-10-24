@@ -33,7 +33,6 @@ jsontimes = []
 
 fig = plt.figure()
 
-
 for x in range(0, itterations):
     start = time.process_time()
     r = requests.get("http://localhost:6666") 
@@ -42,7 +41,6 @@ for x in range(0, itterations):
 
 ax1 = fig.add_subplot(211)
 n, bins, patches = plt.hist(prototimes, bins=100, density=1, alpha=0.75)
-
 
 for x in range(0, itterations):
     start = time.process_time()

@@ -23,15 +23,15 @@ itterations = 1000
 # use pandas to clean this mess up if you have some spare time
 
 # list of strings
-times = [line.rstrip('\n') for line in open('results.txt')]
+timesstrings = [line.rstrip('\n') for line in open('results.txt')]
 # array of strings
-timesarray = np.asarray(times)
+timesstringarray = np.asarray(timesstrings)
 # array of flaots
-timesarraygood = [float(numeric_string) for numeric_string in timesarray]
+timesarray = [float(numeric_string) for numeric_string in timesstringarray]
 
 
-n, bins, patches = plt.hist(timesarraygood, bins=1000, density=1, alpha=0.75)
-avaragetime = sum(timesarraygood) / float(len(timesarraygood))
+n, bins, patches = plt.hist(timesarray, bins=1000, density=1, alpha=0.75)
+avaragetime = sum(timesarray) / float(len(timesarray))
 
 print("average gRPC time is ", avaragetime)
 
