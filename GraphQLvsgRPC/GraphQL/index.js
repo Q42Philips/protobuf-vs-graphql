@@ -1,5 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
 
+const port = 1234;
+
 const data = [
     {
     testint: 1234,
@@ -32,6 +34,6 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
+server.listen( { port } ).then(({ url }) => {
   console.log(`Server running at ${url}`);
 });

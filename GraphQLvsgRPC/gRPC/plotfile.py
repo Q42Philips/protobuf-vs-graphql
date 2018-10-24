@@ -18,7 +18,6 @@ plt.rcParams.update({
     "savefig.edgecolor": "black"})
 
 fig = plt.figure()
-itterations = 1000
 
 # use pandas to clean this mess up if you have some spare time
 
@@ -29,6 +28,7 @@ timesstringarray = np.asarray(timesstrings)
 # array of flaots
 timesarray = [float(numeric_string) for numeric_string in timesstringarray]
 
+itterations = len(timesarray)
 
 n, bins, patches = plt.hist(timesarray, bins=1000, density=1, alpha=0.75)
 avaragetime = sum(timesarray) / float(len(timesarray))
@@ -39,7 +39,7 @@ plt.xlabel("time (miliseconds)")
 
 plt.title("gRPC")
 
-plt.axis([0, 1, 0, 14])
+plt.axis([0, 1, 0, 10])
 
 plt.grid()
 

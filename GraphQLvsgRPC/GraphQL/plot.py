@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import matplotlib.pyplot as plt
 import requests
 import time
@@ -34,7 +36,7 @@ fig = plt.figure()
 
 for x in range(0, itterations):
     start = time.process_time()
-    r = requests.post("http://localhost:4000/graphql", headers={"content-type":"application/json"}, data = {"query": "{ data{testint, teststring, testdate, teststring2, testbool}" }) 
+    r = requests.post("http://localhost:1234/graphql", headers={"content-type":"application/json"}, data = {"query":"{ data {testint, teststring, testdate, teststring2, testbool}" }) 
     totaltime = time.process_time() - start
     graphtimes.append(totaltime*1000)
 
@@ -47,7 +49,7 @@ plt.xlabel("time (miliseconds)")
 
 plt.title("GraphQL")
 
-plt.axis([2.0, 6.0, 0, 5])
+plt.axis([2.0, 8.0, 0, 1.2])
 
 plt.grid()
 

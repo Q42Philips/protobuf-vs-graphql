@@ -1,7 +1,7 @@
 var PROTO_PATH = __dirname + '/timetest.proto';
-
 var grpc = require('grpc');
 var protoLoader = require('@grpc/proto-loader');
+
 var packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
     {keepCase: true,

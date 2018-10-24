@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "SpeedProto";
+
+package speedtest;
+
+// The greeting service definition.
+service RequestResponse {
+  // Sends a greeting
+  rpc doCycle (TestRequest) returns (TestReply) {}
+}
+
+
+message TestRequest{
+  string name = 7;
+}
+
+message TestReply {
+
+  string string0 = 0;
+  string string1 = 1;
+  string string2 = 2;
+  string string3 = 3;
+  string string4 = 4;
+  string string5 = 5;
+  string string6 = 6;
+  string string7 = 7;
+  string string8 = 8;
+  string string9 = 9;
+  string string10 = 10;
+  string string11 = 11;
+  string string12 = 12;
+  string string13 = 13;
+  string string14 = 14;
+  string string15 = 15;
+  string string16 = 16;
+  string string17 = 17;
+  string string18 = 18;
+  string string19 = 19;
+  string string20 = 20;
+  string string21 = 21;
+  string string22 = 22;
+  string string23 = 23;
+  string string24 = 24;
+  string string25 = 25;
+  string string26 = 26;
+  string string27 = 27;
+  string string28 = 28;
+  string string29 = 29;
+  string string30 = 30;
+  string string31 = 31;
+  string string32 = 32;
+  string string33 = 33;
+  string string34 = 34;
+  string string35 = 35;
+  string string36 = 36;
+  string string37 = 37;
+  string string38 = 38;
+  string string39 = 39;
+  string string40 = 40;
+  string string41 = 41;
+  string string42 = 42;
+  string string43 = 43;
+  string string44 = 44;
+  string string45 = 45;
+  string string46 = 46;
+  string string47 = 47;
+  string string48 = 48;
+  string string49 = 49;
+  string string50 = 50;
+  string string51 = 51;
+  string string52 = 52;
+  string string53 = 53;
+  string string54 = 54;
+  string string55 = 55;
+  string string56 = 56;
+  string string57 = 57;
+  string string58 = 58;
+  string string59 = 59;
+  string string60 = 60;
+  string string61 = 61;
+  string string62 = 62;
+  string string63 = 63;
+  string string64 = 64;
+  string string65 = 65;
+  string string66 = 66;
+  string string67 = 67;
+  string string68 = 68;
+  string string69 = 69;
+  string string70 = 70;
+  string string71 = 71;
+  string string72 = 72;
+  string string73 = 73;
+  string string74 = 74;
+  string string75 = 75;
+  string string76 = 76;
+  string string77 = 77;
+  string string78 = 78;
+  string string79 = 79;
+  string string80 = 80;
+  string string81 = 81;
+  string string82 = 82;
+  string string83 = 83;
+  string string84 = 84;
+  string string85 = 85;
+  string string86 = 86;
+  string string87 = 87;
+  string string88 = 88;
+  string string89 = 89;
+  string string90 = 90;
+  string string91 = 91;
+  string string92 = 92;
+  string string93 = 93;
+  string string94 = 94;
+  string string95 = 95;
+  string string96 = 96;
+  string string97 = 97;
+  string string98 = 98;
+  string string99 = 99;
+  
+}
