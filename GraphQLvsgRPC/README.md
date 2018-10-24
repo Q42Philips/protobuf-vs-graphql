@@ -63,6 +63,12 @@ or for the large messages:
 
 # Results
 
-Yes gRPC is actually a lot faster (basicly 10X faster for whatevery you trow at it). I would still rather work with GraphQL since gRPC is a pain in the ass.
+The difference between gRPC and GraphQL is very significant, gRPC is approximatly 10 times faster in every scenario. 
+
+The more itterations you do with gRPC the faster the average time gets. This is due to authentication during the first cylce the server and client need to establish a handshake but after this handshake is established, you don't need to repeat this step. In the plot you can actually see this. On average the time the first request response cycle took on gRPC 12 milliseconds. All other cycles after that one however took around 0.05 miliseconds.
+
+Graphql doesn't do this. That is also one of the reasons it is a lot slower. 
+
+What I did find very unexpecting is that the bigger messages where only very slightly slower then the over a 100.000 times smaller messages.
 
 ![plot](graph.png)
