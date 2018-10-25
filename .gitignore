@@ -3,3 +3,4 @@ node_modules/
 results.txt
 results.txt.backup
 .DS_Store
+ENV/
