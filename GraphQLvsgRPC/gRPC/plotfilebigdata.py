@@ -25,13 +25,17 @@ fig = plt.figure()
 timesstrings = [line.rstrip('\n') for line in open('resultsbigdata.txt')]
 # array of strings
 timesstringarray = np.asarray(timesstrings)
-# array of flaots
+# array of floats
 timesarray = [float(numeric_string) for numeric_string in timesstringarray]
 
-itterations = len(timesarray)
+filteredarray = [x for x in timesarray if x < 1.0 ]    
 
-n, bins, patches = plt.hist(timesarray, bins=1000, density=1, alpha=0.75)
-avaragetime = sum(timesarray) / float(len(timesarray))
+itterations = len(filteredarray)
+
+binitter = itterations / 10
+
+n, bins, patches = plt.hist(filteredarray, bins=int(binitter), density=1, alpha=0.75)
+avaragetime = sum(filteredarray) / float(len(filteredarray))
 
 print("average gRPC time is ", avaragetime)
 
