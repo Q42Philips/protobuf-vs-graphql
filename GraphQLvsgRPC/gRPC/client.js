@@ -1,7 +1,7 @@
 const PROTO_PATH = __dirname + '/timetest.proto';
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-import fs from "fs";
+import * as fs from "fs";
 import os from "os";
 
 const packageDefinition = protoLoader.loadSync(

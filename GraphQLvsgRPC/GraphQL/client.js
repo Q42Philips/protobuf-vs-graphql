@@ -1,5 +1,5 @@
 import request from "request";
-import fs from "fs";
+import * as fs from "fs";
 import os from "os";
 
 const itterations = 1000;

@@ -21,7 +21,9 @@ function doCycle(call, callback) {
 }
 
 function main() {
-    const server = new grpc.Server();
+    const server = new grpc.Server(
+    // {'grpc.default_compression_level': 3} // remove comment to enable compression (1->Low -- 3->High)
+    );
     server.addService(speed_test.RequestResponse.service, {doCycle: doCycle});
     server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
     server.start();

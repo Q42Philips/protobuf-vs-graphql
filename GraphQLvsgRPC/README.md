@@ -4,6 +4,19 @@ Comparing round trip speed between GraphQL and gRPC using javascript and compari
 
 
 # Installation
+
+```
+# give executable permission
+chmod +x GraphQLlauch.sh gRPClauch.sh
+# lauch the scripts (first time add -s install)
+./GraphQLlauch.sh
+./gRPClauch.sh
+# give the parameters it asks for
+```
+
+
+# Manual Install
+
 ## GraphQL server
 
 ```
@@ -20,6 +33,7 @@ cd gRPC
 npm install
 npm start
 (for the bigdata server "node serverbigdata.js")
+# if you want to add compression edit the server.js or serverbigdata.js file and uncomment line 30 or 25 respectively
 ```
 
 ## Install Python dependencies
@@ -28,7 +42,7 @@ npm start
 # Setup virtualenv (optional)
 virtualenv ENV -p python3
 source ENV/bin/activate
-pip install -r ../requirements.txt
+pip install -r ../../requirements.txt
 ```
 
 ## Very Large Requests and Responses
@@ -65,7 +79,7 @@ make requests by typing:
 
 or for the large messages:
 
-```serverbigdata.js```
+```node clientserverbigdata.js```
 
 your times should be saved at results.txt (or resultsbigdata.txt)
 
