@@ -110,6 +110,6 @@ The more itterations you do with gRPC the faster the average time gets. This is 
 
 What I did find very unexpecting is that the bigger messages where only very slightly slower then the over a 100.000 times smaller messages.
 
-![GraphQLvsgRPCplot](GraphQLvsgRPC/GraphQLgRPCdata.png)
+![GraphQLvsgRPCplot](GraphQLgRPCdata.png)
 
 ![GraphQL with keep alive](graphqlkeepalive.png)
