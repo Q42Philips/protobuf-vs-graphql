@@ -49,7 +49,7 @@ plt.xlabel("time (miliseconds)")
 
 plt.title("GraphQL")
 
-plt.axis([2.0, 8.0, 0, 1.2])
+plt.axis([2.0, 8.0, 0, 3])
 
 plt.grid()
 
