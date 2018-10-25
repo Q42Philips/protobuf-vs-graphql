@@ -1,14 +1,14 @@
-var protobuf = require('protocol-buffers')
-var fs = require('fs');
-const express = require('express')
+import protobuf from "protocol-buffers";
+import express from "express"
+import fs from "fs";
 const app = express()
 const port = 6666
 
 // pass a proto file as a buffer/string or pass a parsed protobuf-schema object
-var messages = protobuf(fs.readFileSync('timetest.proto'))
+const messages = protobuf(fs.readFileSync('timetest.proto'))
 
 //encoding
-var buf = messages.Test.encode(
+const buf = messages.Test.encode(
   {
   testinit: 1234,
   teststring: "helloworldstring",

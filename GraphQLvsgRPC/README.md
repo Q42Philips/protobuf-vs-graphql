@@ -25,13 +25,21 @@ npm start
 ## Install Python dependencies
 
 ```
-pip install -r requirements.txt
+pip install -r ../requirements.txt
 
 # Setup virtualenv (optional)
 virtualenv ENV
 ```
 
 ## Very Large Requests and Responses
+
+These files are for generating very big messages (1Mb for example).
+
+How to use:
+
+Open the generatebigmessage.py and generatebigdata.py in a code editor and uncomment what you need.
+
+To then execute the scripts type
 
 ```python3 generatebigmessage.py``` 
 
@@ -101,6 +109,17 @@ to now plot there results type
 or for the large data
 
 ```python3 plotfilebigdata.py```
+
+## client.sh
+
+There is also a client.sh file in all directories. This file is to show the curl command to make a request to the localhost server. If you don't get exactly how the request works I hope this file will help. 
+
+to give executable permissions and run type
+
+```
+chmod +x client.sh
+./client.sh [amount of requests]
+```
 
 # Results
 

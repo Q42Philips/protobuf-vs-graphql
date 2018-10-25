@@ -23,7 +23,7 @@ npm start
 ## Install python dependecies
 
 ```
-pip install -r requirements.txt
+pip install -r ../requirements.txt
 
 # Setup virtualenv (optional)
 virtualenv ENV

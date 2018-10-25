@@ -1,10 +1,10 @@
-var PROTO_PATH = __dirname + '/timetest.proto';
-var grpc = require('grpc');
-var protoLoader = require('@grpc/proto-loader');
-var fs = require('fs');
-var os = require('os');
+const PROTO_PATH = __dirname + '/timetest.proto';
+const grpc = require('grpc');
+const protoLoader = require('@grpc/proto-loader');
+import fs from "fs";
+import os from "os";
 
-var packageDefinition = protoLoader.loadSync(
+const packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
     {
         keepCase: true,
@@ -13,16 +13,19 @@ var packageDefinition = protoLoader.loadSync(
         defaults: true,
         oneofs: true
     });
-var speed_test = grpc.loadPackageDefinition(packageDefinition).speedtest;
+const speed_test = grpc.loadPackageDefinition(packageDefinition).speedtest;
 
-var itterations = 1000;
+const itterations = 1000;
 
-for (var i = 0; i < itterations; i++) {
+for (let i = 0; i < itterations; i++) {
 
-    var starttime = process.hrtime()
+    // start timer
+    let starttime = process.hrtime()
 
-    var client = new speed_test.RequestResponse('localhost:50051', grpc.credentials.createInsecure());
+    let client = new speed_test.RequestResponse('localhost:50051', grpc.credentials.createInsecure());
     client.doCycle({ name: "test" }, function (err, response) {
+        // uncomment these to see the response
+
         // console.log(response.testint);
         // console.log(response.teststring);
         // console.log(response.testdate);
@@ -30,11 +33,13 @@ for (var i = 0; i < itterations; i++) {
         // console.log(response.testbool);
     });
 
+    // stop timer
     time = process.hrtime(starttime)
+    // take first element of time array (seconds) and divide to make milliseconds
     totaltime = time[1] / 1000000
     console.info('Execution time: %dms', totaltime)
 
-    fs.appendFile('results.txt', totaltime+ os.EOL , function(err) {
+    fs.appendFile('results.txt', totaltime + os.EOL , function(err) {
         if(err) {
             return console.log(err);
         }

@@ -1,8 +1,8 @@
-var PROTO_PATH = __dirname + '/timetest.proto';
-var grpc = require('grpc');
-var protoLoader = require('@grpc/proto-loader');
+const PROTO_PATH = __dirname + '/timetest.proto';
+const grpc = require('grpc');
+const protoLoader = require('@grpc/proto-loader');
 
-var packageDefinition = protoLoader.loadSync(
+const packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
     {keepCase: true,
      longs: String,
@@ -10,7 +10,7 @@ var packageDefinition = protoLoader.loadSync(
      defaults: true,
      oneofs: true
     });
-var speed_test = grpc.loadPackageDefinition(packageDefinition).speedtest;
+const speed_test = grpc.loadPackageDefinition(packageDefinition).speedtest;
 
 function doCycle(call, callback) {
     callback(null, 
@@ -26,7 +26,7 @@ function doCycle(call, callback) {
 }
 
 function main() {
-    var server = new grpc.Server();
+    const server = new grpc.Server();
     server.addService(speed_test.RequestResponse.service, {doCycle: doCycle});
     server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
     server.start();

@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import requests
+import matplotlib.mlab as mlab
 import time
 import argparse as ap
-import matplotlib.mlab as mlab
 
 plt.rcParams.update({
     "lines.color": "white",
