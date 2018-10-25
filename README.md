@@ -8,6 +8,6 @@ If you don't care and just want to see results here you go:
 
 ![GraphQLvsgRPCplot](GraphQLvsgRPC/GraphQLgRPCdata.png)
 
-![GraphQL with keep alive](GraphQLvsGRPC/graphqlkeepalive.png)
+![GraphQL with keep alive](GraphQLvsgRPC/graphqlkeepalive.png)
 
 ![JSONvsProtoplot](JSONvsProtocolBuffers/graph.png)
