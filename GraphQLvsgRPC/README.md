@@ -25,10 +25,10 @@ npm start
 ## Install Python dependencies
 
 ```
-pip install -r ../requirements.txt
-
 # Setup virtualenv (optional)
-virtualenv ENV
+virtualenv ENV -p python3
+source ENV/bin/activate
+pip install -r ../requirements.txt
 ```
 
 ## Very Large Requests and Responses
