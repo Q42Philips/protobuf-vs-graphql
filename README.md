@@ -6,6 +6,8 @@ See folders for further instrucions.
 
 If you don't care and just want to see results here you go:
 
-![GraphQLvsgRPCplot](GraphQLvsgRPC/graph.png)
+![GraphQLvsgRPCplot](GraphQLvsgRPC/GraphQLgRPCdata.png)
+
+![GraphQL with keep alive](graphqlkeepalive.png)
 
 ![JSONvsProtoplot](JSONvsProtocolBuffers/graph.png)
