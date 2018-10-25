@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message Test {
-  int32 testint = 1;
-  string teststring = 2;
-  string testdate = 3;
-  string teststring2 = 4;
-  bool testbool = 5;
-}

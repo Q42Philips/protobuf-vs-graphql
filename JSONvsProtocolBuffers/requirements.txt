@@ -1,5 +1,0 @@
-requests 
-matplotlib 
-argparse 
-numpy 
-virtualenv
