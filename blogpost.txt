@@ -1,0 +1,44 @@
+THE HACKER NEWS BLOGPOST
+
+In this blogpost I am going to compare GraphQL and gRPC round trip data.
+
+Ass we all probabaly know gRPC is a lot faster then GraphQL. Other people on the internet even say
+10 times faster. But for me personally I would rather work with GraphQL since it is a lot easier to 
+work with and a lot easier to query from. So I decided to test the performance loss when migrating 
+from gRPC to GraphQL. And the results will suprise you.
+
+I decided to create a localhost server for GraphQL and gRPC and then query data from there to test the
+latency. Then plot the results using python matplotlib. 
+
+[add results image]
+
+This gives some very expected results. As all other blog posts said gRPC is about 10 times faster.
+
+So next up I decided to test sending very lange messages (MegaBytes instead of several bytes).
+
+[add results image]
+
+These results are quite nice since they show that very lagre messages does not affect the permorfance
+much. 
+
+But still I am not happy with the fact that GraphQL is 10X slower. That probably means I am not going
+to migrate because that is a very significant difference. But then I decided to investigate.
+
+As it turns out gRPC uses keep alive headers by default. You can also see this in the plots when you
+go all the way to the right. There is one little bar around the 12 milliseconds mark. This is becuase
+of the fact that for keep-alive you need to first establish a handshake. This first handshake takes 
+(relativly) long. But after this handshake is established you do not need to repeat this process.
+This makes a huge performance difference. So then I thought is it not possible to enable keep-alive
+headers with GraphQL since that would make the results fair. Good news the keep-alive headers worked
+for GraphQL. 
+
+[add results image]
+
+Wow these results are great. In fact even a little better then gRPC. Which to this day I still find
+weird. But still this means I could migrate to GraphQL since the permorfance is (almost) the 
+same. 
+
+If you would like to recreate these results you can try it yourself right here:
+https://github.com/Q42Philips/protobuf-vs-graphql
+
+Feed Back is always welcome!

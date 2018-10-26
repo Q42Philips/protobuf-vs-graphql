@@ -1,6 +1,6 @@
-import protobuf from "protocol-buffers";
-import express from "express"
-import fs from "fs";
+const protobuf = require('protocol-buffers');
+const express = require('express');
+import * as fs from "fs";
 const app = express()
 const port = 6666
 
