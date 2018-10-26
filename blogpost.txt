@@ -1,11 +1,22 @@
 THE HACKER NEWS BLOGPOST
 
-In this blogpost I am going to compare GraphQL and gRPC round trip data.
+GraphQL vs gRPC performance benchmark.
 
-Ass we all probably know gRPC is a lot faster then GraphQL. Other people on the internet even say
-10 times faster. But for me personally I would rather work with GraphQL since it is a lot easier to 
-work with and a lot easier to query from. So I decided to test the performance loss when migrating 
-from gRPC to GraphQL. And the results will surprise you.
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing
+data. When you send a query to GraphQL you will get exactly what you asked for nothing more or less.
+It is also really easy to use and you can get all your nested data in one request.
+
+gRPC is an open source remote procedure call system, and it uses HTTP/2 for transport.
+The biggest feature added by gRPC is the concept of protobufs. Protobufs are language and platform 
+neutral systems used to serialize data, meaning that these communications can be efficiently 
+serialized and communicated in an effective manner. This means the main selling point of gRPC is 
+the execptional speed.
+
+So the main question now is can we get best of both worlds, easy programming, nice quering and speed?
+
+People on the internet say (https://dev.to/plutov/benchmarking-grpc-and-rest-in-go-565) 
+gRPC is about 10 times faster then GraphQL but is this really the case? So I decided to test the 
+performance loss when migrating from gRPC to GraphQL. And the results will surprise you.
 
 I decided to create a localhost server for GraphQL and gRPC and then query data from there to test the
 latency. Then plot the results using python matplotlib. 
