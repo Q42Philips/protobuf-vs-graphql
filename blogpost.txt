@@ -16,7 +16,7 @@ So the main question now is can we get best of both worlds, easy programming, ni
 
 People on the internet say (https://dev.to/plutov/benchmarking-grpc-and-rest-in-go-565) 
 gRPC is about 10 times faster then GraphQL but is this really the case? So I decided to test the 
-performance loss when migrating from gRPC to GraphQL. And the results will surprise you.
+performance for gRPC to GraphQL with the same data. And the results will surprise you.
 
 I decided to create a localhost server for GraphQL and gRPC and then query data from there to test the
 latency. Then plot the results using python matplotlib. 
@@ -29,16 +29,24 @@ So next up I decided to test sending very large messages (MegaBytes instead of s
 
 [add results image]
 
-These results are quite nice since they show that very large messages does not affect the performance
-much. 
+These results are quite nice since they show that the amount of data was less important then then 
+http hanshake and connection related things for this range of data. This might not be the case 
+if you are not using localhost though since that adds more hops.
+
+One very weird thing however and I think this is due to localhost. You can add compression to the 
+GraphQL server (just uncomment 1 line). And I would think that makes a big performance improvement
+but weirdly enough it didn't.
 
 But still I am not happy with the fact that GraphQL is 10X slower. That probably means I am not going
 to migrate because that is a very significant difference. But then I decided to investigate.
 
-As it turns out gRPC uses keep alive headers by default. You can also see this in the plots when you
-go all the way to the right. There is one little bar around the 12 milliseconds mark. This is becuase
+explain keep alive
+This is becuase
 of the fact that for keep-alive you need to first establish a handshake. This first handshake takes 
 (relativly) long. But after this handshake is established you do not need to repeat this process.
+gRPC always uses keep alive. You can also see this in the plots when you go all the way to the right. 
+There is one little bar around the 12 milliseconds mark. 
+
 This makes a huge performance difference. So then I thought is it not possible to enable keep-alive
 headers with GraphQL since that would make the results fair. Good news the keep-alive headers worked
 for GraphQL. 
