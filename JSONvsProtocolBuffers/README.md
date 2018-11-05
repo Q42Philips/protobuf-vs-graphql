@@ -7,7 +7,7 @@ Comparing round trip speed between Protocol Buffers and JSON using javascript.
 ## JSON server
 
 ```
-cd json
+cd jSONvsProtocolBuffers/json
 npm install
 npm start
 ```
@@ -15,7 +15,7 @@ npm start
 ## Protobuf server
 
 ```
-cd protobuf
+cd jSONvsProtocolBuffers/protobuf
 npm install
 npm start
 ```

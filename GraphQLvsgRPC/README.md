@@ -7,10 +7,10 @@ Comparing round trip speed between GraphQL and gRPC using javascript and compari
 
 ```
 # give executable permission
-chmod +x GraphQLlauch.sh gRPClauch.sh
+chmod +x GraphQLlaucher.sh gRPClaucher.sh
 # lauch the scripts (first time add -s install)
-./GraphQLlauch.sh
-./gRPClauch.sh
+./GraphQLlaucher.sh
+./gRPClaucher.sh
 # give the parameters it asks for
 ```
 
@@ -20,7 +20,7 @@ chmod +x GraphQLlauch.sh gRPClauch.sh
 ## GraphQL server
 
 ```
-cd GraphQL
+cd GraphQLvsgRPC/GraphQL
 npm install
 npm start
 (for the bigdata server "node indexbigdata.js")
@@ -29,7 +29,7 @@ npm start
 ## gRPC server
 
 ```
-cd gRPC
+cd GraphQLvsgRPC/gRPC
 npm install
 npm start
 (for the bigdata server "node serverbigdata.js")
